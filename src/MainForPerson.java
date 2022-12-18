@@ -1,6 +1,6 @@
-public class Main {
+public class MainForPerson {
     public static void main(String[] args) {
-Person firstPerson = new Person();
+        Person firstPerson = new Person();
         firstPerson.age = 18;
         firstPerson.name = "Kate";
         firstPerson.height = 195;
@@ -16,5 +16,5 @@ secondPerson.info(35, "Katty", 190);
 
             System.out.println(firstPerson.getMoney(800));
     }
-}
+    }
 
