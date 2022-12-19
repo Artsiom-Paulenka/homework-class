@@ -5,7 +5,7 @@ return middleFirstNumber;
     }
 
     public static int getSecondMiddle(int numberOne, int numberTwo, int numberThree){
-        int middleSecondNumber = (numberOne + numberTwo + numberThree) / 2;
+        int middleSecondNumber = (numberOne + numberTwo + numberThree) / 3;
         return middleSecondNumber;
     }
 }

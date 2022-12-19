@@ -11,18 +11,18 @@ public class PensionFund {
         this.date = date;
     }
 
-    public int pensionСalculation(int minSalary, int maxSalary, int age) {
+    public int pensionСalculation(int minSalary, int maxSalary, int ageOfWork) {
         if (state) {
-            int finish = MiddleNumberUtils.getFirstMiddle(minSalary, maxSalary);
-            finish *= PENSION_MULTIPLIER * age;
-            System.out.println("При негосударственной аша пенсия" + finish);
-            return finish;
+            int summary = MiddleNumberUtils.getFirstMiddle(minSalary, maxSalary);
+            summary *= PENSION_MULTIPLIER * ageOfWork;
+            System.out.println("При государственном фонде ваша пенсия составит " + summary);
+            return summary;
         } else {
             int middlePensionInTheCountry = 1500;
-            int finish1 = MiddleNumberUtils.getSecondMiddle(minSalary, maxSalary, middlePensionInTheCountry);
-            finish1 *= PENSION_MULTIPLIER * age;
-            System.out.println("Ваша пенсия" + finish1);
-            return finish1;
+            int summaryOne = MiddleNumberUtils.getSecondMiddle(minSalary, maxSalary, middlePensionInTheCountry);
+            summaryOne *= PENSION_MULTIPLIER * ageOfWork;
+            System.out.println("При негосударственном фонде ваша пенсия составит " + summaryOne);
+            return summaryOne;
         }
     }
 //public static void pension(){
