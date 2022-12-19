@@ -25,9 +25,6 @@ public class PensionFund {
             return summaryOne;
         }
     }
-//public static void pension(){
-//        int a = PensionFund.
-//}
 
 }
 
