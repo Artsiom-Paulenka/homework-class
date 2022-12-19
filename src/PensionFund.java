@@ -2,7 +2,7 @@
 public class PensionFund {
     private static final double PENSION_MULTIPLIER = 0.02;
     private String name;
-    boolean state;
+    private boolean state;
     final String date;
 
     public PensionFund(String name, String date, boolean state) {
