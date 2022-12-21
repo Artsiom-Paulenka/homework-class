@@ -3,7 +3,7 @@ public class MainForPension {
 
         PensionFund salary = new PensionFund("Жизнь", "12/12/2022)", false);
 
-        salary.pensionСalculation(100,150,5);
+        salary.pensionСalculation(100, 150, 5);
     }
 }
 
