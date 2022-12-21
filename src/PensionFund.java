@@ -20,8 +20,7 @@ public class PensionFund {
             System.out.println("При государственном фонде ваша пенсия составит " + summary);
             return summary;
         } else {
-
-            int summaryOne = MiddleNumberUtils.getSecondMiddle(minSalary, maxSalary, MIDDLE_PENSION_IN_THE_COUNTRY);
+         int summaryOne = MiddleNumberUtils.getSecondMiddle(minSalary, maxSalary, MIDDLE_PENSION_IN_THE_COUNTRY);
             summaryOne *= PENSION_MULTIPLIER * ageOfWork;
             System.out.println("При негосударственном фонде ваша пенсия составит " + summaryOne);
             return summaryOne;
