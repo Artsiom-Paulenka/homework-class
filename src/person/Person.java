@@ -1,6 +1,6 @@
 package person;
 
-public class Person {
+public abstract class Person {
 
     private String name;
     private int age;
@@ -60,5 +60,7 @@ public class Person {
             System.out.println("I'm work");
         }
     }
+
+    public abstract void die();
 
 }

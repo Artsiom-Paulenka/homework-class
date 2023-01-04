@@ -2,19 +2,23 @@ package person;
 
 public class MainForPerson {
     public static void main(String[] args) {
-        Person firstPerson = new Person();
-        Person secondPerson = new Person();
+        Person pensioner = new Pensioner();
+        Person worker = new Worker();
 
 
-        firstPerson.info(20, "Artiom", 185);
-        secondPerson.info(35, "Katty", 190);
-        firstPerson.setName("Bob");
-        firstPerson.goForWork(16);
-        firstPerson.setMoney(500);
+        pensioner.info(60, "Artiom", 185);
+        worker.info(45, "Katty", 150);
+        pensioner.setName("Bob");
+        worker.setHeight(179);
+        pensioner.goForWork(50);
+        pensioner.setMoney(500);
 
-        System.out.println(firstPerson.getName());
-        System.out.println(secondPerson.getHeight());
-        System.out.println(firstPerson.getMoney());
+
+
+
+        System.out.println(pensioner.getName());
+        System.out.println(worker.getHeight());
+        System.out.println(pensioner.getMoney());
     }
 }
 
