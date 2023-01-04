@@ -1,20 +1,43 @@
+package pensionFund;
+
+import java.util.Objects;
 
 public class PensionFund {
 
     private static final double PENSION_MULTIPLIER = 0.02;
     private String name;
-    private boolean state;
-    final String date;
+    private boolean isState;
+    private final String date;
     private static final int MIDDLE_PENSION_IN_THE_COUNTRY = 1500;
 
-    public PensionFund(String name, String date, boolean state) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PensionFund that = (PensionFund) o;
+
+        if (isState != that.isState) return false;
+        if (!Objects.equals(name, that.name)) return false;
+        return Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (isState ? 1 : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        return result;
+    }
+
+    public PensionFund(String name, String date, boolean isState) {
         this.name = name;
-        this.state = state;
+        this.isState = isState;
         this.date = date;
     }
 
     public int pensionСalculation(int minSalary, int maxSalary, int ageOfWork) {
-        if (state) {
+        if (isState) {
             int summary = MiddleNumberUtils.getFirstMiddle(minSalary, maxSalary);
             summary *= PENSION_MULTIPLIER * ageOfWork;
             System.out.println("При государственном фонде ваша пенсия составит " + summary);
