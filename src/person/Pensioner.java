@@ -23,6 +23,7 @@ public class Pensioner extends Person {
     }
 
 
+
     @Override
     public void die() {
         double x = (ageOfPensioner - 50) * pension;
