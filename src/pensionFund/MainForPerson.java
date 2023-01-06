@@ -1,7 +1,4 @@
-package person;
-
-import pensionFund.Pensioner;
-import pensionFund.Worker;
+package pensionFund;
 
 public class MainForPerson {
     public static void main(String[] args) {

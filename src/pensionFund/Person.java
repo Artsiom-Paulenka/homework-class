@@ -1,4 +1,4 @@
-package person;
+package pensionFund;
 
 public abstract class Person {
 

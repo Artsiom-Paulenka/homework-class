@@ -1,7 +1,5 @@
 package pensionFund;
 
-import person.Person;
-
 public class Worker extends Person implements AbleToCalculatePension {
 
     private int minSalary;
