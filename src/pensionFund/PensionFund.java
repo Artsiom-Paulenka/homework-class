@@ -7,8 +7,16 @@ public class PensionFund {
     private static final double PENSION_MULTIPLIER = 0.02;
     private String name;
     private boolean isState;
-    private final String date;
+    private String date;
     private static final int MIDDLE_PENSION_IN_THE_COUNTRY = 1500;
+
+    public PensionFund() {
+
+    }
+
+public String getDate(){
+        return date;
+}
 
     @Override
     public boolean equals(Object o) {
@@ -30,6 +38,15 @@ public class PensionFund {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "PensionFund{" +
+                "name='" + name + '\'' +
+                ", isState=" + isState +
+                ", date='" + date + '\'' +
+                '}';
+    }
+
     public PensionFund(String name, String date, boolean isState) {
         this.name = name;
         this.isState = isState;
@@ -43,12 +60,13 @@ public class PensionFund {
             System.out.println("При государственном фонде ваша пенсия составит " + summary);
             return summary;
         } else {
-         int summaryOne = MiddleNumberUtils.getSecondMiddle(minSalary, maxSalary, MIDDLE_PENSION_IN_THE_COUNTRY);
+            int summaryOne = MiddleNumberUtils.getSecondMiddle(minSalary, maxSalary, MIDDLE_PENSION_IN_THE_COUNTRY);
             summaryOne *= PENSION_MULTIPLIER * ageOfWork;
             System.out.println("При негосударственном фонде ваша пенсия составит " + summaryOne);
             return summaryOne;
         }
     }
+
 }
 
 

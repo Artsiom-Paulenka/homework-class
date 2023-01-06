@@ -1,4 +1,6 @@
-package person;
+package pensionFund;
+
+import person.Person;
 
 public class Pensioner extends Person {
 

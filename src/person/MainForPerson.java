@@ -1,5 +1,8 @@
 package person;
 
+import pensionFund.Pensioner;
+import pensionFund.Worker;
+
 public class MainForPerson {
     public static void main(String[] args) {
         Person firstPerson = new Pensioner();
