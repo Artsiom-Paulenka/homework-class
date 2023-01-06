@@ -10,13 +10,6 @@ public class PensionFund {
     private String date;
     private static final int MIDDLE_PENSION_IN_THE_COUNTRY = 1500;
 
-    public PensionFund() {
-
-    }
-
-public String getDate(){
-        return date;
-}
 
     @Override
     public boolean equals(Object o) {
@@ -53,7 +46,7 @@ public String getDate(){
         this.date = date;
     }
 
-    public int pensionСalculation(int minSalary, int maxSalary, int ageOfWork) {
+    public int pensionCalculation(int minSalary, int maxSalary, int ageOfWork) {
         if (isState) {
             int summary = MiddleNumberUtils.getFirstMiddle(minSalary, maxSalary);
             summary *= PENSION_MULTIPLIER * ageOfWork;
