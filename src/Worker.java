@@ -42,7 +42,7 @@ public class Worker extends Person implements AbleToCalculatePension {
     @Override
     public double calculatePension() {
 
-        PensionFund pensionFund = new PensionFund("Bob", "12.12.2022", true);
+        PensionFund pensionFund = new PensionFund("Bob", "12.12.2022", TypeOfFund.NOTSTATE);
 
         return pensionFund.pensionCalculation(minSalary, maxSalary, getAge());
 

@@ -1,17 +1,19 @@
 public class MainForPension {
     public static void main(String[] args) {
 
-        PensionFund statePension = new PensionFund("Live", "12/12/2022)", true);
+        //PensionFund statePension = new PensionFund("Live", "12/12/2022)", TypeOfFund.NOTSTATE);
 //        PensionFund notStatePension = new PensionFund("House", "11/11/2022)", false);
+
+        //PensionFund state = new PensionFund("Live", "12/12/12", TypeOfFund.SCAMMERS);
 
         Worker worker = new Worker();
 
-        worker.setMinSalary(200);
-        worker.setMaxSalary(1000);
-        worker.setAgeOfWork(30);
+        worker.setMinSalary(1000);
+        worker.setMaxSalary(2300);
+        worker.setAge(45);
         double result = worker.calculatePension();
 
-        System.out.print(result);
+        System.out.println(result);
     }
 }
 
