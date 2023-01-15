@@ -1,5 +1,3 @@
-package pensionFund;
-
 public class MiddleNumberUtils {
     public static int getFirstMiddle(int numberOne, int numberTwo){
 int middleFirstNumber = (numberOne + numberTwo) / 2;

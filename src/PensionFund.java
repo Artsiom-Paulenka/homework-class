@@ -1,5 +1,3 @@
-package pensionFund;
-
 import java.util.Objects;
 
 public class PensionFund {

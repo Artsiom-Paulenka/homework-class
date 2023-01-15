@@ -1,4 +1,4 @@
-package pensionFund;
+import java.util.Objects;
 
 public abstract class Person {
 
@@ -8,6 +8,17 @@ public abstract class Person {
     private double weight;
     private int money;
 
+    private Sex sex;
+
+    private Month month;
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
 
     public String getName() {
         return name;
@@ -47,6 +58,31 @@ public abstract class Person {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        if (age != person.age) return false;
+        if (height != person.height) return false;
+        if (Double.compare(person.weight, weight) != 0) return false;
+        return Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        result = 31 * result + age;
+        result = 31 * result + height;
+        temp = Double.doubleToLongBits(weight);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     public void info(int age, String name, int height) {

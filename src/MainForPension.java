@@ -1,5 +1,3 @@
-package pensionFund;
-
 public class MainForPension {
     public static void main(String[] args) {
 
