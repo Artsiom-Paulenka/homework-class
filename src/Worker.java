@@ -1,11 +1,19 @@
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Worker extends Person implements AbleToCalculatePension {
 
     private int minSalary;
     private int maxSalary;
 
+    //private int minSalaryWithChildren;
+
     private int ageOfWork;
 
     private Month month;
+
 
     public int getMinSalary() {
         return minSalary;
@@ -33,10 +41,13 @@ public class Worker extends Person implements AbleToCalculatePension {
         } else System.err.println("Недопустимое значение");
     }
 
+
+
     @Override
     public void die() {
         System.out.println("Этот человек не дожил до пенсии");
     }
+
 
 
     @Override
@@ -44,7 +55,9 @@ public class Worker extends Person implements AbleToCalculatePension {
 
         PensionFund pensionFund = new PensionFund("Bob", "12.12.2022", TypeOfFund.NOTSTATE);
 
-        return pensionFund.pensionCalculation(minSalary, maxSalary, getAge());
+        double minSalaryWorkerWithChildren = getChildOfWorker().size() * 200;
+
+        return pensionFund.pensionCalculation(minSalaryWorkerWithChildren, maxSalary, getAge());
 
     }
 

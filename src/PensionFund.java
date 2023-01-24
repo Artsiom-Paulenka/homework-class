@@ -48,23 +48,20 @@ public class PensionFund {
     }
 
     public double pensionCalculation(double minSalary, double maxSalary, int ageOfWork) {
-       switch (typeOfFund){
-           case STATE:
-               double summary = MiddleNumberUtils.getMiddle(minSalary, maxSalary);
-                   summary *= PENSION_MULTIPLIER * ageOfWork;
-                   System.out.println("При государственном фонде ваша пенсия составит " + summary);
-                   return summary;
+        switch (typeOfFund) {
+            case STATE:
+                double summary = MiddleNumberUtils.getMiddle(minSalary, maxSalary);
+                summary *= PENSION_MULTIPLIER * ageOfWork;
+                return summary;
 
-           case NOTSTATE:
-               double summaryOne = MiddleNumberUtils.getMiddle(minSalary, maxSalary, MIDDLE_PENSION_IN_THE_COUNTRY);
-                   summaryOne *= PENSION_MULTIPLIER * ageOfWork;
-                   System.out.println("При негосударственном фонде ваша пенсия составит " + summaryOne);
-                   return summaryOne;
+            case NOTSTATE:
+                double summaryOne = MiddleNumberUtils.getMiddle(minSalary, maxSalary, MIDDLE_PENSION_IN_THE_COUNTRY);
+                summaryOne *= PENSION_MULTIPLIER * ageOfWork;
+                return summaryOne;
 
-           case SCAMMERS:
-               System.out.println("Ваша пенсия равна нулю");
-               return 0;
-       }
+            case SCAMMERS:
+                return 0;
+        }
 
         return 0;
     }

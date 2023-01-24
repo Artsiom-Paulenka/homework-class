@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Person {
@@ -11,6 +13,16 @@ public abstract class Person {
     private Sex sex;
 
     private Month month;
+
+    private List<String> childOfWorker;
+
+    public List<String> getChildOfWorker() {
+        return childOfWorker;
+    }
+
+    public void setChildOfWorker(List<String> childOfWorker) {
+        this.childOfWorker = childOfWorker;
+    }
 
     public Sex getSex() {
         return sex;
