@@ -1,7 +1,9 @@
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
@@ -13,6 +15,13 @@ public class Worker extends Person implements AbleToCalculatePension {
     private int ageOfWork;
 
     private Month month;
+
+    private List<Company> company;
+
+    private Set<PensionFund> pensionFundSet = new HashSet<>();
+
+
+
 
 
     public int getMinSalary() {
@@ -26,6 +35,14 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     public void setAgeOfWork(int ageOfWork) {
         this.ageOfWork = ageOfWork;
+    }
+
+    public Set<PensionFund> getPensionFundSet() {
+        return pensionFundSet;
+    }
+
+    public void setPensionFundSet(Set<PensionFund> pensionFundSet) {
+        this.pensionFundSet = pensionFundSet;
     }
 
     public void setMinSalary(int minSalary) {
@@ -42,12 +59,10 @@ public class Worker extends Person implements AbleToCalculatePension {
     }
 
 
-
     @Override
     public void die() {
         System.out.println("Этот человек не дожил до пенсии");
     }
-
 
 
     @Override
@@ -61,7 +76,22 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     }
 
-    public void setNewSalary() {
+    public void companyOfWorker( List<Company> company) {
+        System.out.print("Я работал в следующих компаниях: ");
+        for (Company company1 : company) {
+            System.out.print(company1);;
+        }
+
+                }
+    }
+
+
+
+
+
+
+
+//public void setNewSalary() {
 //        Sex sex = getSex();
 
 //        switch (sex) {
@@ -73,42 +103,42 @@ public class Worker extends Person implements AbleToCalculatePension {
 //                minSalary *= 1.6;
 //                maxSalary *= 1.6;
 //        }
-       //if (month.equals(Month.DECEMBER)) {
-       //    minSalary *= 10;
-       //    maxSalary *= 10;
-       //} else if (month.equals(Month.NOVEMBER)) {
-       //    minSalary *= 2;
-       //    maxSalary *= 2;
-       //} else if (month.equals(Month.JANUARY)) {
-       //    minSalary *= 1.1;
-       //    maxSalary *= 1.1;
-       //}
-        //switch (month) {
-        //    case DECEMBER:
-        //        minSalary *= 10;
-        //        maxSalary *= 10;
-        //        break;
-        //    case NOVEMBER:
-        //        minSalary *= 2;
-        //        maxSalary *= 2;
-        //        break;
-        //    case JANUARY:
-        //        minSalary *= 1.1;
-        //        maxSalary *= 1.1;
-        //        break;
-        //    default:
-        //        minSalary *= 0;
-        //        maxSalary *= 0;
-        //        break;
+//if (month.equals(Month.DECEMBER)) {
+//    minSalary *= 10;
+//    maxSalary *= 10;
+//} else if (month.equals(Month.NOVEMBER)) {
+//    minSalary *= 2;
+//    maxSalary *= 2;
+//} else if (month.equals(Month.JANUARY)) {
+//    minSalary *= 1.1;
+//    maxSalary *= 1.1;
+//}
+//switch (month) {
+//    case DECEMBER:
+//        minSalary *= 10;
+//        maxSalary *= 10;
+//        break;
+//    case NOVEMBER:
+//        minSalary *= 2;
+//        maxSalary *= 2;
+//        break;
+//    case JANUARY:
+//        minSalary *= 1.1;
+//        maxSalary *= 1.1;
+//        break;
+//    default:
+//        minSalary *= 0;
+//        maxSalary *= 0;
+//        break;
 //
-        //}
+//}
 
-        double number = month.getNumber();
-
-        minSalary *= number;
-        maxSalary *= number;
-
-    }
+//double number = month.getNumber();
+//
+//minSalary *= number;
+//maxSalary *= number;
 
 
-}
+
+
+

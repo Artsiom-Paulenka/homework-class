@@ -1,5 +1,5 @@
-public class MainForPerson {
-    public static void main(String[] args) {
+//public class MainForPerson {
+//    public static void main(String[] args) {
 //        Person firstPerson = new Pensioner();
 //
 //        firstPerson.info(60, "Artiom", 185);
@@ -19,19 +19,19 @@ public class MainForPerson {
 //
 //
 //        Pensioner pensioner = new Pensioner();
-        Worker worker = new Worker();
+        //Worker worker = new Worker();
 //
 //        pensioner.die();
 //        worker.die();
 
 
-        worker.setMinSalary(1500);
-        worker.setMaxSalary(2000);
+//worker.setMinSalary(1500);
+//worker.setMaxSalary(2000);
 
-        worker.setNewSalary();
-        System.out.println(worker.getMinSalary());
-        System.out.println(worker.getMaxSalary());
-    }
+//worker.setNewSalary();
+//System.out.println(worker.getMinSalary());
+//System.out.println(worker.getMaxSalary());
+//
 
-}
+//
 
