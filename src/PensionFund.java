@@ -48,6 +48,8 @@ public class PensionFund {
     }
 
     public double pensionCalculation(double minSalary, double maxSalary, int ageOfWork) {
+
+
         switch (typeOfFund) {
             case STATE:
                 double summary = MiddleNumberUtils.getMiddle(minSalary, maxSalary);
@@ -61,11 +63,14 @@ public class PensionFund {
 
             case SCAMMERS:
                 return 0;
+
         }
 
-        return 0;
+            return 0;
+        }
+
     }
 
-}
+
 
 

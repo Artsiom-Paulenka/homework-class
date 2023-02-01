@@ -1,27 +1,17 @@
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
     private int minSalary;
     private int maxSalary;
 
-    //private int minSalaryWithChildren;
-
-    private int ageOfWork;
-
     private Month month;
 
     private List<Company> company;
 
-    private Set<PensionFund> pensionFundSet = new HashSet<>();
-
-
-
+    private Set<PensionFund> pensionFundSet;
 
 
     public int getMinSalary() {
@@ -32,10 +22,6 @@ public class Worker extends Person implements AbleToCalculatePension {
         return maxSalary;
     }
 
-
-    public void setAgeOfWork(int ageOfWork) {
-        this.ageOfWork = ageOfWork;
-    }
 
     public Set<PensionFund> getPensionFundSet() {
         return pensionFundSet;
@@ -65,31 +51,38 @@ public class Worker extends Person implements AbleToCalculatePension {
     }
 
 
+    public void companyOfWorker(List<Company> company) {
+        System.out.print("Я работал в следующих компаниях: ");
+        for (Company company1 : company) {
+            System.out.print(company1);
+        }
+    }
+
     @Override
     public double calculatePension() {
 
+        int workExperience = getAge() - 18;
         PensionFund pensionFund = new PensionFund("Bob", "12.12.2022", TypeOfFund.NOTSTATE);
-
-        double minSalaryWorkerWithChildren = getChildOfWorker().size() * 200;
-
-        return pensionFund.pensionCalculation(minSalaryWorkerWithChildren, maxSalary, getAge());
+        double minSalaryWorkerWithChildren = minSalary + getChildOfWorker().size() * 200;
+        return pensionFund.pensionCalculation(minSalaryWorkerWithChildren, maxSalary, workExperience);
 
     }
 
-    public void companyOfWorker( List<Company> company) {
-        System.out.print("Я работал в следующих компаниях: ");
-        for (Company company1 : company) {
-            System.out.print(company1);;
+    public double bestPension() {
+
+        int workExperience = getAge() - 18;
+        double minSalaryWorkerWithChildren = minSalary + getChildOfWorker().size() * 200;
+        double bestResult = 0;
+        for (PensionFund fund : pensionFundSet) {
+            double countPension = fund.pensionCalculation(minSalaryWorkerWithChildren, maxSalary, workExperience);
+            if (bestResult > countPension) {
+                bestResult = countPension;
+            }
         }
+        return bestResult;
 
-                }
     }
-
-
-
-
-
-
+}
 
 //public void setNewSalary() {
 //        Sex sex = getSex();

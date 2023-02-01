@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Person {
 
@@ -15,6 +13,7 @@ public abstract class Person {
     private Month month;
 
     private List<String> childOfWorker;
+
 
     public List<String> getChildOfWorker() {
         return childOfWorker;
@@ -110,5 +109,17 @@ public abstract class Person {
     }
 
     public abstract void die();
+
+    public void countOfChild() {
+        int numberOfChild = getChildOfWorker().size();
+        System.out.println("У меня " + numberOfChild + " детей: ");
+        int counter = 0;
+        for (String s : childOfWorker) {
+            counter++;
+            System.out.println(counter + ") " + s);
+
+        }
+    }
+
 
 }
