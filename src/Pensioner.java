@@ -21,4 +21,6 @@ public class Pensioner extends Person {
         System.out.println("Этот пенсионер умер, он заработал:" + x);
         System.out.println("Зато у меня " + getChildOfWorker().size() + " детей");
     }
+
+
 }

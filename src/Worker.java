@@ -52,7 +52,7 @@ public class Worker extends Person implements AbleToCalculatePension {
 
 
     public void companyOfWorker(List<Company> company) {
-        System.out.print("Я работал в следующих компаниях: ");
+        System.out.println("Я работал в следующих компаниях: ");
         for (Company company1 : company) {
             System.out.print(company1);
         }
@@ -75,13 +75,15 @@ public class Worker extends Person implements AbleToCalculatePension {
         double bestResult = 0;
         for (PensionFund fund : pensionFundSet) {
             double countPension = fund.pensionCalculation(minSalaryWorkerWithChildren, maxSalary, workExperience);
-            if (bestResult > countPension) {
+            if (countPension > bestResult) {
                 bestResult = countPension;
             }
         }
         return bestResult;
 
     }
+
+
 }
 
 //public void setNewSalary() {

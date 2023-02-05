@@ -1,6 +1,8 @@
 import java.util.*;
 
-public abstract class Person {
+public abstract class Person implements Comparable<Person>  {
+
+
 
     private String name;
     private int age;
@@ -120,6 +122,22 @@ public abstract class Person {
 
         }
     }
-
+    @Override
+    public int compareTo(Person o) {
+        if(name.length() > o.getName().length()){
+            return 1;
+        }
+        if(name.length() < o.getName().length()){
+            return -1;
+        }
+        else if (name.length() == o.getName().length()){
+            if((age > o.getAge())){
+                return 1;
+            }else if((age < o.getAge())){
+                return -1;
+            }
+        }
+        return 0;
+    }
 
 }
